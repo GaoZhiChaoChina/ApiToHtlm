@@ -1,0 +1,524 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>v2.2.1 api</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+/* RESET
+=============================================================================*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+}
+/* BODY
+=============================================================================*/
+body {
+font-family: Helvetica, arial, freesans, clean, sans-serif;
+font-size: 14px;
+line-height: 1.6;
+color: #333;
+background-color: #fff;
+padding: 20px;
+max-width: 960px;
+margin: 0 auto;
+}
+body>*:first-child {
+margin-top: 0 !important;
+}
+body>*:last-child {
+margin-bottom: 0 !important;
+}
+/* BLOCKS
+=============================================================================*/
+p, blockquote, ul, ol, dl, table, pre {
+margin: 15px 0;
+}
+/* HEADERS
+=============================================================================*/
+h1, h2, h3, h4, h5, h6 {
+margin: 20px 0 10px;
+padding: 0;
+font-weight: bold;
+-webkit-font-smoothing: antialiased;
+}
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+font-size: inherit;
+}
+h1 {
+font-size: 28px;
+color: #000;
+}
+h2 {
+font-size: 24px;
+border-bottom: 1px solid #ccc;
+color: #000;
+}
+h3 {
+font-size: 18px;
+}
+h4 {
+font-size: 16px;
+}
+h5 {
+font-size: 14px;
+}
+h6 {
+color: #777;
+font-size: 14px;
+}
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+margin-top: 0;
+padding-top: 0;
+}
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+margin-top: 0;
+padding-top: 0;
+}
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+margin-top: 10px;
+}
+/* LINKS
+=============================================================================*/
+a {
+color: #4183C4;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+/* LISTS
+=============================================================================*/
+ul, ol {
+padding-left: 30px;
+}
+ul li > :first-child,
+ol li > :first-child,
+ul li ul:first-of-type,
+ol li ol:first-of-type,
+ul li ol:first-of-type,
+ol li ul:first-of-type {
+margin-top: 0px;
+}
+ul ul, ul ol, ol ol, ol ul {
+margin-bottom: 0;
+}
+dl {
+padding: 0;
+}
+dl dt {
+font-size: 14px;
+font-weight: bold;
+font-style: italic;
+padding: 0;
+margin: 15px 0 5px;
+}
+dl dt:first-child {
+padding: 0;
+}
+dl dt>:first-child {
+margin-top: 0px;
+}
+dl dt>:last-child {
+margin-bottom: 0px;
+}
+dl dd {
+margin: 0 0 15px;
+padding: 0 15px;
+}
+dl dd>:first-child {
+margin-top: 0px;
+}
+dl dd>:last-child {
+margin-bottom: 0px;
+}
+/* CODE
+=============================================================================*/
+pre, code, tt {
+font-size: 12px;
+font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+code, tt {
+margin: 0 0px;
+padding: 0px 0px;
+white-space: nowrap;
+border: 1px solid #eaeaea;
+background-color: #f8f8f8;
+border-radius: 3px;
+}
+pre>code {
+margin: 0;
+padding: 0;
+white-space: pre;
+border: none;
+background: transparent;
+}
+pre {
+background-color: #f8f8f8;
+border: 1px solid #ccc;
+font-size: 13px;
+line-height: 19px;
+overflow: auto;
+padding: 6px 10px;
+border-radius: 3px;
+}
+pre code, pre tt {
+background-color: transparent;
+border: none;
+}
+kbd {
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+background-color: #DDDDDD;
+background-image: linear-gradient(#F1F1F1, #DDDDDD);
+background-repeat: repeat-x;
+border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+border-image: none;
+border-radius: 2px 2px 2px 2px;
+border-style: solid;
+border-width: 1px;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+line-height: 10px;
+padding: 1px 4px;
+}
+/* QUOTES
+=============================================================================*/
+blockquote {
+border-left: 4px solid #DDD;
+padding: 0 15px;
+color: #777;
+}
+blockquote>:first-child {
+margin-top: 0px;
+}
+blockquote>:last-child {
+margin-bottom: 0px;
+}
+/* HORIZONTAL RULES
+=============================================================================*/
+hr {
+clear: both;
+margin: 15px 0;
+height: 0px;
+overflow: hidden;
+border: none;
+background: transparent;
+border-bottom: 4px solid #ddd;
+padding: 0;
+}
+/* TABLES
+=============================================================================*/
+table th {
+font-weight: bold;
+}
+table th, table td {
+border: 1px solid #ccc;
+padding: 6px 13px;
+}
+table tr {
+border-top: 1px solid #ccc;
+background-color: #fff;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+/* IMAGES
+=============================================================================*/
+img {
+max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="jquery.ztree_toc.js"></script></p>
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+$('#tree').ztree_toc({
+is_auto_number:true,
+documment_selector:'.markdown-body',
+ztreeStyle: {
+width:'260px',
+height:'650px',
+overflow: 'auto',
+position: 'fixed',
+'z-index': 2147483647,
+border: '0px none',
+left: '0px',
+top: '0px'
+}
+});
+});
+//-->
+</SCRIPT>
+<ul id="tree" class="ztree"></ul>
+<p><article class='markdown-body'></p>
+<p><a href="api.html" title="飞凡API文档">查看“飞凡API文档” 请猛戳</a> </br></p>
+
+<h1>V2.1 API</h1>
+<hr />
+<h2>说明</h2>
+<table>
+	<thead>
+		<tr>
+			<th>颜色</th>
+			<th>说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="background:red; color: white;">新增属性</td>
+			<td style=" text-align:center;">---</td>
+		</tr>
+		<tr>
+			<td style="background:red; color: white;text-decoration: line-through;">删除属性</td>
+			<td style=" text-align:center;">---</td>
+		</tr>
+		<tr>
+			<td style="background:#0099ff; color: white;">层级结构</td>
+			<td>嵌套子属性</td>
+		</tr>
+		<tr>
+			<td style="background:#ff9f00; color: white;">重命名</td>
+			<td>属性名称重命名</td>
+		</tr>
+		<tr>
+			<td style="background:#A020F0; color: white;">重点提醒</td>
+			<td style=" text-align:center;">---</td>
+		</tr>
+	</tbody>
+</table>
+<hr />
+<h2>功能目的</h2>
+<ol>
+<li>提高API请求参数安全、数据传输安全，防止他人篡改或抓取数据</li>
+</ol>
+<h2>HTPPS请求接口（m=Safe模块）</h2>
+<div style="background:red; color: white;">&nbsp以下接口模块m=Address换成m=Safe</div>
+<pre><code>a=addrlist
+a=addrdetail
+</code></pre>
+
+<div style="background:red; color: white;">&nbsp以下接口模块m=User换成m=Safe</div>
+<pre><code>a=login(POST提交)
+</code></pre>
+
+<div style="background:red; color: white;">&nbsp以下接口模块m=Order换成m=Safe</div>
+<pre><code>a=orderList
+a=orderGoodsDetail
+</code></pre>
+
+<div style="background:red; color: white;">&nbsp以下接口模块m=ReturnGoods换成m=Safe</div>
+<pre><code>a=returnGoodsList
+a=returnGoodsDetail
+</code></pre>
+
+<h2>业务接口请求</h2>
+<h3>用户登录</h3>
+<ol>
+<li>接口名称：a=login</li>
+<li>接口说明：<div style="background:red; color: white;">POST请求</div></li>
+<li>请求地址：<code>http://api1.mkf360.com/api.php?g=Api1_1_0&amp;m=Safe&amp;a=login&amp;user_name=13671671533&amp;password=123456&amp;mobile_id=123&amp;os=ios&amp;debug=1</code></li>
+<li>
+请求参数：
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m</td>
+<td>模块</td>
+<td>string</td>
+<td>true</td>
+<td>m=Safe为用户模块</td>
+</tr>
+<tr>
+<td>a</td>
+<td>action方法名称</td>
+<td>string</td>
+<td>true</td>
+<td>a=login为登录</td>
+</tr>
+<tr>
+<td>g</td>
+<td>接口版本</td>
+<td>string</td>
+<td>true</td>
+<td>g=Api1_1_0为后台接口版本号</td>
+</tr>
+<tr>
+<td>res</td>
+<td>分辨率</td>
+<td>string</td>
+<td>true</td>
+<td>480*800;用于CRM分析</td>
+</tr>
+<tr>
+<td>os</td>
+<td>平台</td>
+<td>string</td>
+<td>true</td>
+<td>android\ios</td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>手机号</td>
+<td>string</td>
+<td>true</td>
+<td style="background:#A020F0; color: white;">POST参数，不参与加密</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+<td>string</td>
+<td>true</td>
+<td style="background:#A020F0; color: white;">POST参数，不参与加密</td>
+</tr>
+<tr>
+<td>mobile_id</td>
+<td>imei编号</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr style="background:red; color: white;">
+<td>sign</td>
+<td>加密参数签名</td>
+<td>string</td>
+<td>true</td>
+<td style="background:#A020F0; color: white;">MD5 ( KEY+MD5(a+m+os+mobile_id...参数按字母排序) )</td>
+</tr>
+<tr style="background:red; color: white;">
+<td>timestamp</td>
+<td>当前请求时间</td>
+<td>int</td>
+<td>true</td>
+<td>时间戳</td>
+</tr>
+<tr style="background:red; color: white;text-decoration: line-through;">
+<td>debug</td>
+<td>调试模式</td>
+<td>string</td>
+<td>false</td>
+<td>1表示调试</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+返回数据：
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>执行结果</td>
+<td>int</td>
+<td>1为成功，小于0的为失败</td>
+</tr>
+<tr>
+<td>hxId</td>
+<td>环信ID</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>hxPsd</td>
+<td>环信密码</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>headIcon</td>
+<td>头像</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>用户ID</td>
+<td>object</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+返回JSON事例：
+</br>
+
+<pre><code>
+{
+result: 1,
+hxId: 1,
+hxPsd: 1,
+data: "163841"
+}
+</pre></code>
+</li>
+<li>KEY：android通过JNI实现，KEY通过AES加密做为不可变常量，使用时通过AES解密后使用。IOS同理，只忽略前一句。</li>
+<li>关键接口通讯使用HTPPS+服务器颁发证书请求，使用证书是为了防止中间服务代理与服务器通讯。其它普通接口还是使用http请求。（实现方法已发送给相关开发负责人）</li>
+</ol>
+<h3>获取服务器时间戳</h3>
+<ol>
+<li>接口名称：<code>http://api1.mkf360.com/t</code></li>
+<li>接口说明：</li>
+<li>请求地址：<code>http://api1.mkf360.com/t</code></li>
+<li>
+请求参数：
+<table>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</li>
+<li>
+返回数据：
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>当前时间戳</td>
+<td>int</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</article>
+</li>
+</ol>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
